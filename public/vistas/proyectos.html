@@ -1,0 +1,300 @@
+<div class="box box-widget widget-user-2">
+<div class="widget-user-header bg-blue bannerbutton" style="height: 140px;">
+        <div class ="widget-user-image">
+        	<img class ="img-circle" src="dist/img/adm.png" alt="User Avatar" style="height: 100px; width: 100px;">
+        </div><!-- /.widget-user-image -->
+        <div style="margin-left: 40px;">
+        	<h3 style="font-weight: 400;" class ="widget-user-username">Nombre del usuario</h3>
+        	<h5 style="color: #adc4c7" class ="widget-user-desc">Rol</h5>        	
+        </div>        
+    </div>
+
+<div class="row" style="margin-top: 15px;">
+
+	<div class="col-md-6"> <!-- columna para crear -->
+		<h3 class="titulopagina"> Crear proyecto</h3>
+				   
+        <form action="/crearProyecto" method=" post">	
+
+	        <div class="box box-primary">
+	        	<div class="box-header with-border">
+	        		<input type="text" name="titulo" class="form-control" placeholder="Titulo del proyecto"
+	        					style="border-color: transparent">
+	        	</div>
+	        	<div class="box-body">
+	        		<div style="margin-left: 16px; margin-right: 16px;">
+	        			<label> Resumen / Descripción del proyecto</label>
+	        			<textarea type="text" name="titulo" class="form-control" placeholder="resumen"></textarea>        						
+	        		</div>
+	        		
+	        		<hr>
+
+	        		<div class="form-group col-lg-12">
+						<label for="tipo">Código del proyecto</label>
+						<input type="text" class="form-control" name="codigo">
+					</div>
+
+	        		<div class="form-group col-lg-12">
+						                <label for="tipo">Categoria</label>
+						                <select name="tipo" id="tipo" class="form-control">
+						                    	<option selected="selected" value="1"> estudiante </option>
+										      	<option value="2"> docente </option>
+										      	<option value="3"> invitado </option>
+						                </select>
+					</div>
+
+
+					<div class="form-group col-lg-12">
+						<label for="fecha">Fecha de Inicio</label>
+						 <div class="col-xs-12" style="padding: 0px;" >				        
+
+							<div class='input-group date'  id='datetimepicker1'>
+								<input type='date' class="form-control" name="fecha" placeholder="DD/MM/YYYY" />
+								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+							</div>				    
+							<script type="text/javascript">
+										        $(function () {
+										            $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY'});
+										        });
+							</script> 
+							</div>
+					</div>	
+
+					<div class="form-group col-lg-12">
+									    <label for="fecha">Fecha de Finalizacion</label>
+						 <div class="col-xs-12" style="padding: 0px;" >				        
+
+							<div class='input-group date'  id='datetimepicker1'>
+								<input type='date' class="form-control" name="fecha" placeholder="DD/MM/YYYY" />
+								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+							</div>				    
+							<script type="text/javascript">
+								$(function () {
+									 $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY'});
+								});
+							</script> 
+						</div>
+					</div>	
+
+					<div class="form-group col-lg-12">
+						<label for="tipo">Estado</label>
+						<select name="tipo" id="tipo" class="form-control">
+						                    	<option selected="selected" value="1"> activo </option>
+										      	<option value="2"> pausado </option>
+										      	<option value="3"> finalizado </option>
+
+						</select>
+					</div>
+
+
+					<div class="form-group col-lg-12">
+						<label for="tipo">Semillero</label>
+						<select name="tipo" id="tipo" class="form-control">
+						    <option selected="selected" value="1"> VIRAL </option>
+						</select>
+					</div>		            
+
+	        		<div class="col-xs-12">
+					  		<button style="float:right;" type="submit" class="btn btn-primary" >Crear</button>
+					</div>      	
+
+	        	</div> <!-- body del box -->
+	        </div> <!-- box primary -->
+	    </form>
+		
+	</div><!-- columna para crear -->
+
+	<!-- ====================================================================================================== -->
+
+
+	<div class="col-md-6"> <!-- columna para listar -->
+		<h3 class="titulopagina">Tus Proyectos</h3>
+		
+            <div class="box box-primary"> <!-- PROYECTO -->
+
+            	<div class="box-header with-border"> 
+			        <h3 class="box-title">Nombre del proyecto</h3>
+			        <div class="box-tools pull-right">		                	
+			                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+			                    <button type="button" style="height: 24px; width: 24px; padding: 2px;" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong"><i class="glyphicon glyphicon-edit"></i></button>
+			        </div>
+			    </div><!-- /.box-header -->
+
+			    <div class="box-body">
+			        <div class="box-footer no-padding">
+			            <ul class="nav nav-stacked">
+			                        <li><a href="#">Codigo del proyecto <span class="pull-right badge">#######</span></a></li>
+			                        <li><a href="#">Categoria <span class="pull-right badge bg-green">######</span></a></li>
+			                        <li><a href="#">Fecha de incio <span class="pull-right badge">12/03/2015</span></a></li>
+			                        <li><a href="#">Fecha de finalización <span class="pull-right badge">12/03/2015</span></a></li>
+			                        <li><a href="#">Estado <span class="pull-right badge bg-blue">Activo</span></a></li> 
+			                        <li><a href="#">Semillero <span class="pull-right badge">semillero</span></a></li>
+			            </ul>
+			        </div>
+			        <div>
+			            <div class="box-header with-border">
+			                <h3 class="box-title"><b>Resumen</b></h3> 
+			            </div>
+			                      <p style="margin: 8px; text-align: justify;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			        </div>
+
+			        <div class="box-header with-border"> 
+				                <h3 class="box-title"><b> Integrantes </b></h3>
+				    </div>
+				    <div class="box-body">
+				        <table class="table">
+							<thead>
+								      <tr>
+								      	<th>Foto</th>
+								        <th>Codigo</th>
+								        <th>Nombre</th>
+								        <th>Rol</th>
+								      </tr>
+								    </thead>
+							<tbody>
+								      <tr>
+								      	<td><img src="dist/img/adm.png" class="img-circle" style="width: 30px;"></td>
+								        <td>####</td>
+								        <td>###</td>
+								        <td>###</td>
+								      </tr>
+								      <tr>
+								      	<td><img src="dist/img/adm.png" class="img-circle" style="width: 30px;"></td>
+								        <td>####</td>
+								        <td>###</td>
+								        <td>###</td>
+								      </tr>							      
+								</tbody>
+							<form action="/agregarIntegrante" method="post">
+								<div class="col-xs-8" style="padding: 2px;">
+								    		<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>" />
+									    	<input type="text" class="form-control" name="codigo" placeholder="ingrese el codigo del integrante">
+								</div>
+								<div class="col-xs-4" style="padding: 2px;">
+								    		<button id="vincular" style="width: 100%;" type="submit" class="btn btn-primary">vincular</button>
+								</div>
+								<hr>									    	
+								    	
+							</form>
+
+								    
+						</table>
+				    </div>
+
+			    </div>
+            </div>  <!-- proyecto -->
+		            
+		    <hr>
+
+
+		    <div class="box box-primary"> <!-- PROYECTO -->
+
+            	<div class="box-header with-border"> 
+			        <h3 class="box-title">Nombre del proyecto</h3>
+			        <div class="box-tools pull-right">		                	
+			                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+			                    <button type="button" style="height: 24px; width: 24px; padding: 2px;" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong"><i class="glyphicon glyphicon-edit"></i></button>
+			        </div>
+			    </div><!-- /.box-header -->
+
+			    <div class="box-body">
+			        <div class="box-footer no-padding">
+			            <ul class="nav nav-stacked">
+			                        <li><a href="#">Codigo del proyecto <span class="pull-right badge">#######</span></a></li>
+			                        <li><a href="#">Categoria <span class="pull-right badge bg-green">######</span></a></li>
+			                        <li><a href="#">Fecha de incio <span class="pull-right badge">12/03/2015</span></a></li>
+			                        <li><a href="#">Fecha de finalización <span class="pull-right badge">12/03/2015</span></a></li>
+			                        <li><a href="#">Estado <span class="pull-right badge bg-blue">Activo</span></a></li> 
+			                        <li><a href="#">Semillero <span class="pull-right badge">semillero</span></a></li>
+			            </ul>
+			        </div>
+			        <div>
+			            <div class="box-header with-border">
+			                <h3 class="box-title"><b>Resumen</b></h3> 
+			            </div>
+			                      <p style="margin: 8px; text-align: justify;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			        </div>
+
+			        <div class="box-header with-border"> 
+				                <h3 class="box-title"><b> Integrantes </b></h3>
+				    </div>
+				    <div class="box-body">
+				        <table class="table">
+							<thead>
+								      <tr>
+								      	<th>Foto</th>
+								        <th>Codigo</th>
+								        <th>Nombre</th>
+								        <th>Rol</th>
+								      </tr>
+								    </thead>
+							<tbody>
+								      <tr>
+								      	<td><img src="dist/img/adm.png" class="img-circle" style="width: 30px;"></td>
+								        <td>####</td>
+								        <td>###</td>
+								        <td>###</td>
+								      </tr>
+								      <tr>
+								      	<td><img src="dist/img/adm.png" class="img-circle" style="width: 30px;"></td>
+								        <td>####</td>
+								        <td>###</td>
+								        <td>###</td>
+								      </tr>							      
+								</tbody>
+							<form action="/agregarIntegrante" method="post">
+								<div class="col-xs-8" style="padding: 2px;">
+								    		<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>" />
+									    	<input type="text" class="form-control" name="codigo" placeholder="ingrese el codigo del integrante">
+								</div>
+								<div class="col-xs-4" style="padding: 2px;">
+								    		<button id="vincular" style="width: 100%;" type="submit" class="btn btn-primary">vincular</button>
+								</div>
+								<hr>									    	
+								    	
+							</form>
+
+								    
+						</table>
+				    </div>
+
+			    </div>
+            </div>  <!-- proyecto -->
+
+
+
+	            <div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+
+				    <!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Modal Header</h4>
+				      </div>
+				      <div class="modal-body">
+				        <p>Some text in the modal.</p>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+
+				  </div>
+	            </div> <!-- MODAL -->
+			
+
+
+	</div> <!-- columna listar -->
+
+</div> <!-- row -->

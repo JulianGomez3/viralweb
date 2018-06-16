@@ -1,0 +1,175 @@
+<div style="background-color: #ecf0f5 !important">
+
+			<div class="box box-widget widget-user-2">
+	                <!-- Add the bg color to the header using any of the bg-* classes -->
+	    		<div class="widget-user-header bg-blue bannerbutton" style="height: 140px;">
+	        		<div class ="widget-user-image">
+	        			<img class ="img-circle" src="dist/img/adm.png" alt="User Avatar" style="height: 100px; width: 100px;">
+	        		</div><!-- /.widget-user-image -->
+	        		<div style="margin-left: 40px;">
+	        			<h3 style="font-weight: 400;" class ="widget-user-username">Nombre del usuario</h3>
+	        			<h5 style="color: #adc4c7" class ="widget-user-desc">Rol</h5>        	
+	        		</div>        
+	    		</div>
+			</div>
+
+
+			<div class="col-md-8" style="padding-top: 20px">
+				
+				<form name="registrarRepresentante" action="registrarRepresentante" method="POST">				
+					<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>" />
+
+					<legend> Datos Personales </legend>
+				   
+					<div class="form-group col-md-6">
+					      <label for="documento">Documento</label>
+					      <input type="text" class="form-control" name="documento" id="documento">
+					 </div>
+				    <div class="form-group col-md-6">
+				    	<label for="nombres">Nombre(s)</label>
+				    	<input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombres">
+				    </div>
+				    <div class="form-group col-md-6">
+					    <label for="fecha">Fecha de nacimiento</label>
+					    <div class="col-xs-12" style="padding: 0px;" >				        
+
+						    <div class='input-group date'  id='datetimepicker1'>
+						         <input type='date' class="form-control" name="fecha" placeholder="DD/MM/YYYY" />
+						         <span class="input-group-addon">
+						                <span class="glyphicon glyphicon-calendar"></span>
+						        </span>
+						    </div>				    
+						    <script type="text/javascript">
+						        $(function () {
+						            $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY'});
+						        });
+						    </script>
+						</div>
+					</div>				    				  
+					<div class="form-group col-md-6">
+					    <label for="email">Email</label>
+					    <input type="email" class="form-control" name="email" id="email" placeholder="Correo institucional">
+					</div>
+					<div class="form-group col-md-3">
+					      <label for="codigo">Código</label>
+					      <input type="text" class="form-control" name="codigo" id="codigo">
+					</div>
+					<div class="form-group col-md-3">
+					      <label for="tipo">Tipo</label>
+					      <input type="text" class="form-control" name="tipo" id="tipo">
+					</div>
+					<div class="form-group col-md-6">
+					      <label for="pass">Password</label>
+					      <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+				    </div>
+				    
+					<div class="form-group col-md-6">
+					      <label for="telefono">Telefono</label>
+					      <input type="text" class="form-control" name="telefono" id="telefono">
+					</div>
+					<div class="form-group col-md-6">
+					      <label for="rol">Rol</label>
+					      <input type="text" class="form-control" name="rol" id="rol">
+					</div>
+					<div class="form-group col-md-12">
+					      <label for="fb">Facebook</label>
+					      <input type="text" class="form-control" name="fb" id="fb">
+					</div>
+					<div class="form-group col-md-12">
+					      <label for="twitter">Twitter</label>
+					      <input type="text" class="form-control" name="twitter" id="twitter">
+					</div>
+
+				  				 
+					<div class="form-group col-xs-12">
+					    <label for="descripcion">Descripción</label>
+					    <textarea class="form-control" rows="5" name="descripcion" id="descripcion" ></textarea>
+					</div>
+					
+				    <div class="col-xs-12">
+				  		<button id="actualizar" style="float: right;" type="submit" class="btn btn-primary">Actualizar</button>
+				    </div>			  	
+				</form>
+			</div>
+			<!-- ================= fin de formulario ===============================-->
+
+			<div class="col-md-4 container" style="margin-bottom: 40px;"> 
+				   <br> 
+				   <div class="col-sm-12"> 
+
+				   	<legend> Status </legend>
+
+				       
+				       <form action="" method="post">
+				       		<div class="form-group ">
+					  		   	<label for="cargo">Estado</label>
+					  		   	<select id="cargo" class="form-control">				  		   		
+					  		   		       <option selected="selected" value="activo">activo</option>
+					  		   		       <option value="inactivo">inactivo</option>
+					  		   	</select>
+				  		   </div>
+
+				  		   <div class="form-group">
+							    <label for="fecha">Fecha de ingreso</label>
+							    <div class="col-xs-12" style="padding: 0px;" >				        
+
+								    <div class='input-group date'  id='datetimepicker1'>
+								         <input type='date' class="form-control" name="fecha" placeholder="DD/MM/YYYY" />
+								         <span class="input-group-addon">
+								                <span class="glyphicon glyphicon-calendar"></span>
+								        </span>
+								    </div>				    
+								    <script type="text/javascript">
+								        $(function () {
+								            $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY'});
+								        });
+								    </script>
+								</div>
+							</div>
+
+							<legend style="margin-top: 67px;"> Perfil de habilidades </legend>
+
+							<div class="form-group" >
+							      <label for="historia">Historia</label>
+							      <input type="text" class="form-control" name="fb" id="historia" placeholder="evalúa de 1 a 100">
+							</div>
+							<div class="form-group">
+							      <label for="diseño">Diseño</label>
+							      <input type="text" class="form-control" name="fb" id="diseño" placeholder="evalúa de 1 a 100">
+							</div>
+							<div class="form-group">
+							      <label for="Programacion">Programacion</label>
+							      <input type="text" class="form-control" name="fb" id="Programacion" placeholder="evalúa de 1 a 100">
+							</div>
+							<div class="form-group">
+							      <label for="arte">Arte gráfica</label>
+							      <input type="text" class="form-control" name="fb" id="arte" placeholder="evalúa de 1 a 100">
+							</div>
+
+							<div class="col-xs-12">
+						  		<button id="actualizar" style="float: right;" type="submit" class="btn btn-primary">Actualizar</button>
+						    </div>
+				       </form>
+				   </div> 
+			</div>
+
+</div>
+
+				<!-- ============== formulario de datos ===============================-->
+			
+
+
+
+
+
+
+
+	<script type="text/javascript"> 
+          $("#editar").click(function(event){
+          $("#contenedor").load('vistas/actualizarperfil.html');
+          });   
+ 
+          $("#actualizar").click(function(event){
+          $("#contenedor").load('vistas/leerdatos.html');
+          });
+    </script>

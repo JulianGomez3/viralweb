@@ -1,0 +1,102 @@
+	
+<div class="col-md-12" style="padding-top: 30px; background-color: #ecf0f5;">
+
+		<h3 class="titulopagina"> Registrar Miembro </h3>
+
+				<form name="registrarRepresentante" action="/registrarParticipante" method="POST">				
+					<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>" />
+				   
+					<div class="form-group col-md-6">
+					      <label for="documento">Documento</label>
+					      <input type="text" class="form-control" name="documento" id="documento">
+					 </div>
+				    <div class="form-group col-md-6">
+				    	<label for="nombres">Nombre(s)</label>
+				    	<input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombres">
+				    </div>
+				    <div class="form-group col-md-6">
+					    <label for="fecha">Fecha de nacimiento</label>
+					    <div class="col-xs-12" style="padding: 0px;" >				        
+
+						    <div class='input-group date'  id='datetimepicker1'>
+						         <input type='date' class="form-control" name="fecha" placeholder="DD/MM/YYYY" />
+						         <span class="input-group-addon">
+						                <span class="glyphicon glyphicon-calendar"></span>
+						        </span>
+						    </div>				    
+						    <script type="text/javascript">
+						        $(function () {
+						            $('#datetimepicker1').datetimepicker({format: 'DD/MM/YYYY'});
+						        });
+						    </script> 
+						</div>
+					</div>				    				  
+					<div class="form-group col-md-6">
+					    <label for="email">Email</label>
+					    <input type="email" class="form-control" name="email" id="email" placeholder="Correo institucional">
+					</div>
+
+					<div class="form-group col-md-6">
+					      <label for="pass">Password</label>
+					      <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+				    </div>
+					
+					<div class="form-group col-md-3">
+					      <label for="codigo">Código</label>
+					      <input type="text" class="form-control" name="codigo" id="codigo">
+					</div>
+
+					<div class="col-md-3">
+					<div class="form-group">
+	                  <label for="tipo">Tipo</label>
+	                  <select name="tipo" id="tipo" class="form-control">
+	                    	<option selected="selected" value="1"> Miembro </option>
+					      	<option value="2"> Administrador </option>
+	                  </select>
+	                 </div>
+					</div>
+					 
+
+				    
+					<div class="form-group col-md-6">
+					      <label for="telefono">Telefono</label>
+					      <input type="text" class="form-control" name="telefono" id="telefono">
+					</div>
+					<div class="form-group col-md-6">
+					      <label for="rol">Rol</label>
+					      <select name="rol" id="rol" class="form-control">
+					      	<option selected="selected" value="1"> programador </option>
+					      	<option value="2"> investigador </option>
+					      	<option value="3"> diseñador de videojuego </option>
+					      	<option value="4"> diseñador gráfico </option>
+					      	<option value="5"> director </option>
+					      	<option value="6"> Modelador </option>
+					      </select>
+					      
+					</div>
+					<div class="form-group col-md-12">
+					      <label for="fb">Facebook</label>
+					      <input type="text" class="form-control" name="fb" id="fb">
+					</div>
+					<div class="form-group col-md-12">
+					      <label for="twitter">Twitter</label>
+					      <input type="text" class="form-control" name="twitter" id="twitter">
+					</div>
+
+				  				 
+					<div class="form-group col-xs-12">
+					    <label for="descripcion">Descripción</label>
+					    <textarea class="form-control" rows="5" name="descripcion" id="descripcion" ></textarea>
+					</div>
+
+				  
+
+					
+				    <div class="col-xs-12">
+				  		<button style="float: right;" type="submit" class="btn btn-primary">Registrar</button>
+				    </div>			  	
+				</form>
+			</div>
+
+
+</body>
